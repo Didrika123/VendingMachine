@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VendingMachine
+namespace VendingMachineLogic
 {
-    public interface IVendingMachineLogic
+    public interface IVMLogic
     {
         /// <summary>
         /// 
@@ -18,9 +18,14 @@ namespace VendingMachine
         /// </summary>
         public int RetrieveChange();
 
-        public IProductInfo[] GetAvailableProducts();
+        /// <summary>
+        /// Your credit in the machine (Does not retrieve it, just read)
+        /// </summary>
+        public int GetCredit();
 
-        public IProduct Purchase(IProductInfo product);
+        public ProductInfo[] GetAvailableProducts();
+
+        public IProduct Purchase(ProductInfo product);
         public int[] GetAcceptableMoneyDenominators();
     }
 }

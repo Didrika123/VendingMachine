@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VendingMachine
+namespace VendingMachineLogic
 {
-    public class Product : IProduct
+    public abstract class Product : IProduct
     {
-        IProductInfo _productInfo;
-        public Product(string name, string info, string useMessage, int price)
+        ProductInfo _productInfo;
+        string _useMessage;
+        bool _isPurchased;
+        bool IProduct.IsPurchased { get => _isPurchased; set => _isPurchased = value; }
+        public Product(int id, string name, string info, string useMessage, int price)
         {
-            //_productInfo = new ProductInfo
-        }
-        public IProductInfo Examine()
-        {
-            return _productInfo;
+            _productInfo = new ProductInfo(id, name, info, price);
+            _useMessage = useMessage;
         }
 
         public void Purchase()
         {
-            throw new NotImplementedException();
+            _isPurchased = true;
+        }
+
+        public ProductInfo Examine()
+        {
+            return _productInfo;
         }
 
         public string Use()
         {
-            throw new NotImplementedException();
+            return _useMessage;
         }
     }
 }

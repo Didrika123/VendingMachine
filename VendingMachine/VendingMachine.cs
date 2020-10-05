@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using VendingMachineLogic;
 
 namespace VendingMachine
 {
     class VendingMachine
     {
-        IVendingMachineLogic _vendingMachineLogic = new VendingMachineLogic();
+        IVMLogic _vendingMachineLogic = new VMLogic();
+        List<IProduct> _myProducts = new List<IProduct>();
 
         public void Run()
         {
@@ -18,7 +20,10 @@ namespace VendingMachine
         }
         public int AskUserForSelection(int min, int max)
         {
-            return int.Parse(Console.ReadLine());
+            int sel = 0;
+            Console.Write("\nYour selection: ");
+            while (!int.TryParse(Console.ReadLine(), out sel)) ;
+            return sel;
         }
 
         private void MainMenu()
@@ -28,10 +33,11 @@ namespace VendingMachine
             int maxSelection = 4;
             do
             {
+                Header();
                 Console.WriteLine("1. Insert Money");
                 Console.WriteLine("2. Buy Stuff");
                 Console.WriteLine("3. My Stuff");
-                Console.WriteLine("3. Exit");
+                Console.WriteLine("4. Exit");
                 selection = AskUserForSelection(minSelection, maxSelection);
                 switch (selection)
                 {
@@ -52,22 +58,33 @@ namespace VendingMachine
         }
         private void Exit()
         {
-            Console.WriteLine("Your Change is");
-            Console.WriteLine(_vendingMachineLogic.GetChange());
-            Console.WriteLine("Your items buyed:");
-            Console.WriteLine("Soda");
+            Console.Write("Your Change is: ");
+            Console.WriteLine(_vendingMachineLogic.RetrieveChange());
+            Console.WriteLine("\nYou bought:");
+            foreach (var item in _myProducts)
+            {
+                Console.WriteLine(item.Examine().Name);
+            }
 
-            Console.WriteLine("Thank you come again!");
+            Console.WriteLine("\nThank you come again!");
             Console.ReadKey();
+        }
+        private void Header()
+        {
+            Console.Clear();
+            Console.WriteLine("Big Vending Machine");
+            Console.WriteLine("Credit: " + _vendingMachineLogic.GetCredit());
+            Console.WriteLine();
         }
         private void InsertMoneyMenu()
         {
             int[] okMoney = _vendingMachineLogic.GetAcceptableMoneyDenominators();
             int selection;
             int minSelection = 1;
-            int maxSelection = okMoney.Length;
+            int maxSelection = okMoney.Length + 1;
             do
             {
+                Header();
                 for (int i = 0; i < okMoney.Length; i++)
                 {
                     Console.WriteLine($"{i+1}. Insert {okMoney[i]} kr");
@@ -82,42 +99,54 @@ namespace VendingMachine
         }
         private void BuyMenu()
         {
-            List<IProduct> products = _vendingMachineLogic.GetAvailableProducts();
             int selection;
             int minSelection = 1;
-            int maxSelection = products.Count;
+            int maxSelection;
             do
             {
-                for (int i = 0; i < products.Count; i++)
+                ProductInfo[] products = _vendingMachineLogic.GetAvailableProducts();
+                maxSelection = products.Length + 1;
+
+                Header();
+                for (int i = 0; i < products.Length; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {products[i].Examine().Name}, \t{products[i].Examine().Price} kr");
+                    Console.WriteLine($"{i + 1}. {products[i].Name}, \t{products[i].Price} kr");
+                    Console.WriteLine($"  - {products[i].Info}\n");
                 }
                 Console.WriteLine($"{maxSelection}. Exit");
 
                 selection = AskUserForSelection(minSelection, maxSelection);
                 if (selection != maxSelection)
-                    _vendingMachineLogic.Purchase(products[selection - 1]);
+                {
+                    IProduct purchase = _vendingMachineLogic.Purchase(products[selection - 1]);
+                    if(purchase!=null)
+                        _myProducts.Add(purchase);
+                }
             }
             while (selection != maxSelection);
         }
         private void MyStuffMenu()
         {
-            List<IProduct> products = _vendingMachineLogic.GetPurchasedProducts();
+            List<IProduct> products = _myProducts;
             int selection;
             int minSelection = 1;
-            int maxSelection = products.Count;
+            int maxSelection = products.Count + 1;
             do
             {
+                Header();
                 for (int i = 0; i < products.Count; i++)
                 {
                     Console.WriteLine($"{i + 1}. {products[i].Examine().Name}");
-                    Console.WriteLine($"  - {products[i].Examine().Info}");
                 }
                 Console.WriteLine($"{maxSelection}. Exit");
 
                 selection = AskUserForSelection(minSelection, maxSelection);
                 if (selection != maxSelection)
+                {
+                    Console.WriteLine("You use " + products[selection - 1].Examine().Name +":");
                     Console.WriteLine(products[selection - 1].Use());
+                    Console.ReadKey();
+                }
             }
             while (selection != maxSelection);
         }

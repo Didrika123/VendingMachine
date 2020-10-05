@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VendingMachine
+namespace VendingMachineLogic
 {
     /*
      * 
@@ -12,16 +12,19 @@ namespace VendingMachine
      * */
     public interface IProduct
     {
+        public bool IsPurchased { get; protected set; }
+
         /// <summary>
         /// Buys the product
         /// </summary>
         public void Purchase();
 
 
+
         /// <summary>
         /// Gets productinfo of product
         /// </summary>
-        public IProductInfo Examine();
+        public ProductInfo Examine();
 
         /// <summary>
         /// After you've bought a product you can use it
