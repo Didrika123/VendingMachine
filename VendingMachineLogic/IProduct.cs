@@ -27,7 +27,7 @@ namespace VendingMachineLogic
         public ProductInfo Examine();
 
         /// <summary>
-        /// After you've bought a product you can use it
+        /// Use the product
         /// </summary>
         public string Use();
     }

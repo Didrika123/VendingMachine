@@ -108,22 +108,30 @@ namespace VendingMachine
                 Header();
                 for (int i = 0; i < products.Length; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {products[i].Name}, \t{products[i].Price} kr");
-                    Console.WriteLine($"  - {products[i].Info}\n");
+                    Console.WriteLine("-------------------------------------------------------------------------------------");
+                    if(products[i].Price > 0)
+                        Console.WriteLine($"{i + 1}. {products[i].Name}, {products[i].Price} kr");
+                    else
+                        Console.WriteLine($"{i + 1}. {products[i].Name}");
+                    Console.WriteLine($"\n   {products[i].Info}\n");
                 }
+                Console.WriteLine("-------------------------------------------------------------------------------------");
                 Console.WriteLine($"{maxSelection}. Exit");
 
                 selection = AskUserForSelection(minSelection, maxSelection);
                 if (selection != maxSelection)
                 {
-                    IProduct purchase = _vendingMachineLogic.Purchase(products[selection - 1]);
-                    if(purchase!=null)
-                        _myProducts.Add(purchase);
-                    else
+                    try
                     {
-                        Console.WriteLine("You don't have enough credit!");
-                        Console.ReadKey();
+                        IProduct purchase = _vendingMachineLogic.Purchase(selection);
+                        _myProducts.Add(purchase);
+                        Console.WriteLine($"You bought {purchase.Examine().Name}.");
                     }
+                    catch (ArgumentException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    Console.ReadKey();
                 }
             }
             while (selection != maxSelection);
@@ -146,7 +154,7 @@ namespace VendingMachine
                 selection = AskUserForSelection(minSelection, maxSelection);
                 if (selection != maxSelection)
                 {
-                    Console.WriteLine("You use " + products[selection - 1].Examine().Name +":");
+                    Console.WriteLine("\nYou use " + products[selection - 1].Examine().Name +":\n");
                     Console.WriteLine(products[selection - 1].Use());
                     Console.ReadKey();
                 }

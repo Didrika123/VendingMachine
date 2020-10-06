@@ -7,10 +7,10 @@ namespace VendingMachineLogic
     public interface IVMLogic
     {
         /// <summary>
-        /// 
+        /// Inserts money to the vending machine.
         /// </summary>
-        /// <param name="amount"></param>
-        /// <throws>Invalid Money Denominator</throws>
+        /// <param name="amount">A valid money denominator</param>
+        /// <exception cref="ArgumentException"></exception>
         public void InsertMoney(int amount);
 
         /// <summary>
@@ -23,9 +23,21 @@ namespace VendingMachineLogic
         /// </summary>
         public int GetCredit();
 
+        /// <summary>
+        /// Returns An array of Productinfo for each slot in the vending machine
+        /// </summary>
         public ProductInfo[] GetAvailableProducts();
 
-        public IProduct Purchase(ProductInfo product);
+        /// <summary>
+        /// Purchases the specified product and subtracts the price from your credit in the machine.
+        /// </summary>
+        /// <param name="slotnumber">The slot number of the product you want to purchase</param>
+        /// <exception cref="ArgumentException">Invalid slot, insufficient money or out of stock.</exception>
+        public IProduct Purchase(int slotnumber);
+
+        /// <summary>
+        /// Returns an array of integers, where each int is an accepted value to insert to the vending machine.
+        /// </summary>
         public int[] GetAcceptableMoneyDenominators();
     }
 }

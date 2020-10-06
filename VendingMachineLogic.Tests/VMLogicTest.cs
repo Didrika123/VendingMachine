@@ -39,11 +39,9 @@ namespace VendingMachineLogic.Tests
             // Arrange
             IVMLogic vml = new VMLogic();
 
-            // Act
-            IProduct result = vml.Purchase(vml.GetAvailableProducts()[0]);
 
-            // Assert
-            Assert.Null(result);
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => vml.Purchase(1));
         }
 
         [Fact]
@@ -58,7 +56,7 @@ namespace VendingMachineLogic.Tests
                 vml.InsertMoney(vml.GetAcceptableMoneyDenominators()[0]); //Add tons of acceptable money to the system
 
             ProductInfo pinfo = vml.GetAvailableProducts()[0];
-            IProduct result = vml.Purchase(pinfo);
+            IProduct result = vml.Purchase(1);
 
             // Assert
             Assert.Equal(pinfo.Id, result.Examine().Id);

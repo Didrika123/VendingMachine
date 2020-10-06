@@ -4,13 +4,13 @@ using System.Text;
 
 namespace VendingMachineLogic.Products
 {
-    public class Scarf : Product
+    class Cookie : Product
     {
-        int _id = 91323;
-        string _name = "Scarf";
-        string _info = "Cosy cottony thing to have around your neck since Winter is coming.";
-        string _useMessage = "You wring the scarf around your neck. Mmmmmmmm cosy!";
-        int _price = 129;
+        int _id = 6337;
+        string _name = "Cookie";
+        string _info = "Round as the moon and big as the palm of your hand.";
+        string _useMessage = "...And thats the way the cookie crumbles!";
+        int _price = 5;
 
         public override ProductInfo Examine()
         {
