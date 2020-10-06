@@ -8,21 +8,17 @@ namespace VendingMachine
     class VendingMachine
     {
         IVMLogic _vendingMachineLogic = new VMLogic();
-        List<IProduct> _myProducts = new List<IProduct>();
+        readonly List<IProduct> _myProducts = new List<IProduct>();
 
         public void Run()
         {
-            bool isRunning = true;
-            while (isRunning)
-            {
-                MainMenu();
-            }
+            MainMenu();
         }
-        public int AskUserForSelection(int min, int max)
+        private int AskUserForSelection(int min, int max)
         {
             int sel = 0;
             Console.Write("\nYour selection: ");
-            while (!int.TryParse(Console.ReadLine(), out sel)) ;
+            while (!int.TryParse(Console.ReadLine(), out sel) || sel < min || sel > max) ;
             return sel;
         }
 
@@ -58,8 +54,10 @@ namespace VendingMachine
         }
         private void Exit()
         {
+            Console.Clear();
+            Console.WriteLine("You leave the Vending Machine..\n");
             Console.Write("Your Change is: ");
-            Console.WriteLine(_vendingMachineLogic.RetrieveChange());
+            Console.WriteLine(_vendingMachineLogic.RetrieveChange() + " kr");
             Console.WriteLine("\nYou bought:");
             foreach (var item in _myProducts)
             {
@@ -73,7 +71,7 @@ namespace VendingMachine
         {
             Console.Clear();
             Console.WriteLine("Big Vending Machine");
-            Console.WriteLine("Credit: " + _vendingMachineLogic.GetCredit());
+            Console.WriteLine("Credit: " + _vendingMachineLogic.GetCredit() + " kr");
             Console.WriteLine();
         }
         private void InsertMoneyMenu()
@@ -121,6 +119,11 @@ namespace VendingMachine
                     IProduct purchase = _vendingMachineLogic.Purchase(products[selection - 1]);
                     if(purchase!=null)
                         _myProducts.Add(purchase);
+                    else
+                    {
+                        Console.WriteLine("You don't have enough credit!");
+                        Console.ReadKey();
+                    }
                 }
             }
             while (selection != maxSelection);
