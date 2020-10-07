@@ -24,6 +24,11 @@ namespace VendingMachineLogic
         public int GetCredit();
 
         /// <summary>
+        /// Your credit (as denominators) in the machine (Does not retrieve it, just read)
+        /// </summary>
+        public string GetCreditInMoneyDenominators();
+
+        /// <summary>
         /// Returns An array of Productinfo for each slot in the vending machine
         /// </summary>
         public ProductInfo[] GetAvailableProducts();

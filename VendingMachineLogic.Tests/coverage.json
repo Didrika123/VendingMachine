@@ -22,7 +22,7 @@
       "VendingMachineLogic.ProductInfo": {
         "System.Int32 VendingMachineLogic.ProductInfo::get_Id()": {
           "Lines": {
-            "9": 12
+            "9": 20
           },
           "Branches": []
         },
@@ -40,19 +40,19 @@
         },
         "System.Int32 VendingMachineLogic.ProductInfo::get_Price()": {
           "Lines": {
-            "12": 13
+            "12": 23
           },
           "Branches": []
         },
         "System.Void VendingMachineLogic.ProductInfo::.ctor(System.Int32,System.String,System.String,System.Int32)": {
           "Lines": {
-            "14": 10,
-            "15": 10,
-            "16": 10,
-            "17": 10,
-            "18": 10,
-            "19": 10,
-            "20": 10
+            "14": 18,
+            "15": 18,
+            "16": 18,
+            "17": 18,
+            "18": 18,
+            "19": 18,
+            "20": 18
           },
           "Branches": []
         }
@@ -62,89 +62,89 @@
       "VendingMachineLogic.VMLogic": {
         "System.Void VendingMachineLogic.VMLogic::DoVendingMachineOperatorRestockingWork()": {
           "Lines": {
-            "24": 4,
-            "26": 48,
-            "27": 20,
-            "28": 208,
-            "29": 100,
-            "30": 24,
-            "31": 8,
-            "32": 32,
-            "33": 12,
-            "34": 4
+            "24": 6,
+            "26": 72,
+            "27": 30,
+            "28": 312,
+            "29": 150,
+            "30": 36,
+            "31": 12,
+            "32": 48,
+            "33": 18,
+            "34": 6
           },
           "Branches": [
             {
               "Line": 26,
-              "Offset": 34,
+              "Offset": 28,
               "EndOffset": 5,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 20
+              "Hits": 30
             },
             {
               "Line": 26,
-              "Offset": 34,
-              "EndOffset": 36,
+              "Offset": 28,
+              "EndOffset": 30,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 4
+              "Hits": 6
             },
             {
               "Line": 28,
-              "Offset": 70,
-              "EndOffset": 40,
+              "Offset": 58,
+              "EndOffset": 34,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 100
+              "Hits": 150
             },
             {
               "Line": 28,
-              "Offset": 70,
-              "EndOffset": 72,
+              "Offset": 58,
+              "EndOffset": 60,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 4
+              "Hits": 6
             },
             {
               "Line": 30,
-              "Offset": 111,
-              "EndOffset": 77,
+              "Offset": 93,
+              "EndOffset": 65,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 8
-            },
-            {
-              "Line": 30,
-              "Offset": 111,
-              "EndOffset": 113,
-              "Path": 0,
-              "Ordinal": 4,
-              "Hits": 4
-            },
-            {
-              "Line": 32,
-              "Offset": 152,
-              "EndOffset": 118,
-              "Path": 1,
-              "Ordinal": 7,
               "Hits": 12
             },
             {
+              "Line": 30,
+              "Offset": 93,
+              "EndOffset": 95,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 6
+            },
+            {
               "Line": 32,
-              "Offset": 152,
-              "EndOffset": 154,
+              "Offset": 128,
+              "EndOffset": 100,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 18
+            },
+            {
+              "Line": 32,
+              "Offset": 128,
+              "EndOffset": 130,
               "Path": 0,
               "Ordinal": 6,
-              "Hits": 4
+              "Hits": 6
             }
           ]
         },
         "System.Int32[] VendingMachineLogic.VMLogic::GetAcceptableMoneyDenominators()": {
           "Lines": {
-            "37": 1000,
-            "38": 1000,
-            "39": 1000
+            "37": 1999,
+            "38": 1999,
+            "39": 1999
           },
           "Branches": []
         },
@@ -158,12 +158,12 @@
         },
         "System.Void VendingMachineLogic.VMLogic::InsertMoney(System.Int32)": {
           "Lines": {
-            "47": 1008,
-            "48": 1008,
-            "49": 1008,
+            "47": 2007,
+            "48": 2007,
+            "49": 2007,
             "50": 1,
-            "52": 1007,
-            "53": 1007
+            "52": 2006,
+            "53": 2006
           },
           "Branches": [
             {
@@ -180,25 +180,25 @@
               "EndOffset": 33,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 1007
+              "Hits": 2006
             }
           ]
         },
         "VendingMachineLogic.IProduct VendingMachineLogic.VMLogic::Purchase(System.Int32)": {
           "Lines": {
-            "56": 2,
-            "57": 2,
-            "58": 2,
+            "56": 3,
+            "57": 3,
+            "58": 3,
             "59": 0,
-            "62": 2,
-            "64": 2,
+            "62": 3,
+            "64": 3,
             "65": 0,
-            "67": 2,
+            "67": 3,
             "68": 1,
-            "70": 1,
-            "71": 1,
-            "72": 1,
-            "73": 1
+            "70": 2,
+            "71": 2,
+            "72": 2,
+            "73": 2
           },
           "Branches": [
             {
@@ -207,7 +207,7 @@
               "EndOffset": 9,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 2
+              "Hits": 3
             },
             {
               "Line": 58,
@@ -231,7 +231,7 @@
               "EndOffset": 51,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 2
+              "Hits": 3
             },
             {
               "Line": 64,
@@ -247,7 +247,7 @@
               "EndOffset": 86,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 2
+              "Hits": 3
             },
             {
               "Line": 67,
@@ -263,7 +263,7 @@
               "EndOffset": 122,
               "Path": 1,
               "Ordinal": 7,
-              "Hits": 1
+              "Hits": 2
             }
           ]
         },
@@ -279,20 +279,20 @@
         },
         "VendingMachineLogic.ProductInfo[] VendingMachineLogic.VMLogic::VendingMachineLogic.IVMLogic.GetAvailableProducts()": {
           "Lines": {
-            "83": 1,
-            "85": 1,
-            "86": 14,
-            "87": 6,
-            "89": 6,
-            "90": 6,
-            "91": 4,
-            "92": 4,
-            "93": 4,
-            "94": 4,
-            "95": 2,
-            "96": 6,
-            "97": 1,
-            "98": 1
+            "83": 2,
+            "85": 2,
+            "86": 28,
+            "87": 12,
+            "89": 12,
+            "90": 12,
+            "91": 8,
+            "92": 8,
+            "93": 8,
+            "94": 8,
+            "95": 4,
+            "96": 12,
+            "97": 2,
+            "98": 2
           },
           "Branches": [
             {
@@ -301,7 +301,7 @@
               "EndOffset": 19,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 6
+              "Hits": 12
             },
             {
               "Line": 90,
@@ -309,7 +309,7 @@
               "EndOffset": 44,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 4
+              "Hits": 8
             },
             {
               "Line": 90,
@@ -317,7 +317,7 @@
               "EndOffset": 61,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 2
+              "Hits": 4
             },
             {
               "Line": 86,
@@ -325,22 +325,84 @@
               "EndOffset": 103,
               "Path": 0,
               "Ordinal": 2,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Void VendingMachineLogic.VMLogic::Restock(System.Int32,VendingMachineLogic.IProduct)": {
+          "Lines": {
+            "101": 214,
+            "102": 214,
+            "103": 214,
+            "104": 1,
+            "106": 213,
+            "107": 2,
+            "109": 211,
+            "110": 211
+          },
+          "Branches": [
+            {
+              "Line": 103,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
               "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 11,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 213
+            },
+            {
+              "Line": 106,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 212
+            },
+            {
+              "Line": 106,
+              "Offset": 26,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 106,
+              "Offset": 47,
+              "EndOffset": 49,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 106,
+              "Offset": 47,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 211
             }
           ]
         },
         "System.Void VendingMachineLogic.VMLogic::.ctor()": {
           "Lines": {
-            "10": 4,
-            "12": 4,
-            "14": 4,
-            "15": 4,
-            "16": 56,
-            "17": 24,
-            "18": 24,
-            "19": 24,
-            "21": 4,
-            "22": 4
+            "10": 6,
+            "12": 6,
+            "14": 6,
+            "15": 6,
+            "16": 84,
+            "17": 36,
+            "18": 36,
+            "19": 36,
+            "21": 6,
+            "22": 6
           },
           "Branches": [
             {
@@ -349,7 +411,7 @@
               "EndOffset": 47,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 24
+              "Hits": 36
             },
             {
               "Line": 16,
@@ -357,7 +419,7 @@
               "EndOffset": 81,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 4
+              "Hits": 6
             }
           ]
         }
@@ -367,9 +429,9 @@
       "VendingMachineLogic.Products.Cookie": {
         "VendingMachineLogic.ProductInfo VendingMachineLogic.Products.Cookie::Examine()": {
           "Lines": {
-            "16": 5,
-            "17": 5,
-            "18": 5
+            "16": 8,
+            "17": 8,
+            "18": 8
           },
           "Branches": []
         },
@@ -383,11 +445,11 @@
         },
         "System.Void VendingMachineLogic.Products.Cookie::.ctor()": {
           "Lines": {
-            "9": 20,
-            "10": 20,
-            "11": 20,
-            "12": 20,
-            "13": 20
+            "9": 33,
+            "10": 33,
+            "11": 33,
+            "12": 33,
+            "13": 33
           },
           "Branches": []
         }
@@ -397,9 +459,9 @@
       "VendingMachineLogic.Products.Fairytale_Collection": {
         "VendingMachineLogic.ProductInfo VendingMachineLogic.Products.Fairytale_Collection::Examine()": {
           "Lines": {
-            "16": 1,
-            "17": 1,
-            "18": 1
+            "16": 2,
+            "17": 2,
+            "18": 2
           },
           "Branches": []
         },
@@ -413,11 +475,11 @@
         },
         "System.Void VendingMachineLogic.Products.Fairytale_Collection::.ctor()": {
           "Lines": {
-            "9": 8,
-            "10": 8,
-            "11": 8,
-            "12": 8,
-            "13": 8
+            "9": 12,
+            "10": 12,
+            "11": 12,
+            "12": 12,
+            "13": 12
           },
           "Branches": []
         }
@@ -427,9 +489,9 @@
       "VendingMachineLogic.Products.Hamburger": {
         "VendingMachineLogic.ProductInfo VendingMachineLogic.Products.Hamburger::Examine()": {
           "Lines": {
-            "16": 1,
-            "17": 1,
-            "18": 1
+            "16": 2,
+            "17": 2,
+            "18": 2
           },
           "Branches": []
         },
@@ -443,11 +505,11 @@
         },
         "System.Void VendingMachineLogic.Products.Hamburger::.ctor()": {
           "Lines": {
-            "9": 101,
-            "10": 101,
-            "11": 101,
-            "12": 101,
-            "13": 101
+            "9": 151,
+            "10": 151,
+            "11": 151,
+            "12": 151,
+            "13": 151
           },
           "Branches": []
         }
@@ -457,9 +519,9 @@
       "VendingMachineLogic.Products.Scarf": {
         "VendingMachineLogic.ProductInfo VendingMachineLogic.Products.Scarf::Examine()": {
           "Lines": {
-            "16": 1,
-            "17": 1,
-            "18": 1
+            "16": 2,
+            "17": 2,
+            "18": 2
           },
           "Branches": []
         },
@@ -473,11 +535,11 @@
         },
         "System.Void VendingMachineLogic.Products.Scarf::.ctor()": {
           "Lines": {
-            "9": 12,
-            "10": 12,
-            "11": 12,
-            "12": 12,
-            "13": 12
+            "9": 18,
+            "10": 18,
+            "11": 18,
+            "12": 18,
+            "13": 18
           },
           "Branches": []
         }

@@ -80,15 +80,18 @@ namespace VendingMachine
             Console.Clear();
             Console.WriteLine("You leave the Vending Machine..\n");
             Console.Write("Your Change is: ");
-            Console.WriteLine(_vendingMachineLogic.RetrieveChange() + " kr");
+            Console.Write(_vendingMachineLogic.GetCredit() + " kr");
+            Console.WriteLine(" (" + _vendingMachineLogic.GetCreditInMoneyDenominators() +")");
+            int myChange = _vendingMachineLogic.RetrieveChange(); //Retrieve the change from machine
             Console.WriteLine("\nYou bought:");
             foreach (var item in _myProducts)
             {
                 Console.WriteLine(item.Examine().Name);
             }
-
             Console.WriteLine("\nThank you come again!");
             Console.ReadKey();
+
+
         }
         private void Header()
         {

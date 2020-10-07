@@ -108,5 +108,24 @@ namespace VendingMachineLogic
 
             _slotStock[index].Enqueue(product);
         }
+
+        public string GetCreditInMoneyDenominators()
+        {
+            StringBuilder strbuilder = new StringBuilder();
+            int remainder = _moneyPool;
+            for (int i = _moneyDenominators.Length - 1; i >= 0 ; i--)
+            {
+                int moneyValue = _moneyDenominators[i];
+                int numberOf = remainder / moneyValue;
+                if(numberOf > 0)
+                {
+                    strbuilder.Append(numberOf + "x " + moneyValue + " Kr, ");
+                    remainder -= numberOf * moneyValue;
+                }
+            }
+            if(strbuilder.Length > 2)
+                strbuilder.Remove(strbuilder.Length - 2, 2); //remove final ", " (for aestheticism)
+            return strbuilder.ToString();
+        }
     }
 }

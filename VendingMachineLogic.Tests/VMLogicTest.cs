@@ -93,5 +93,28 @@ namespace VendingMachineLogic.Tests
             // Assert
             Assert.Equal(newProduct, vml.Purchase(2));
         }
+        [Fact]
+        public void GetCreditInMoneyDenominators()
+        {
+            // Arrange
+            IVMLogic vml = new VMLogic();
+
+            // Act & Assert
+            //1
+            Assert.Equal("", vml.GetCreditInMoneyDenominators()); //No money, no string
+
+            //2
+            int biggest = vml.GetAcceptableMoneyDenominators()[^1];
+            vml.InsertMoney(biggest);
+            Assert.Contains(biggest.ToString(), vml.GetCreditInMoneyDenominators());
+
+            vml.RetrieveChange(); //clear money pool
+
+            //3
+            int smallest = vml.GetAcceptableMoneyDenominators()[0];
+            vml.InsertMoney(smallest);
+            Assert.Contains(smallest.ToString(), vml.GetCreditInMoneyDenominators());
+
+        }
     }
 }
