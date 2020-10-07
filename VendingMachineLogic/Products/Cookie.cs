@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VendingMachineLogic.Products
 {
-    class Cookie : Product
+    public class Cookie : Product
     {
         int _id = 6337;
         string _name = "Cookie";

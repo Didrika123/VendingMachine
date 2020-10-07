@@ -1,0 +1,487 @@
+{
+  "VendingMachineLogic.dll": {
+    "C:\\Users\\monkey\\source\\repos\\VendingMachine\\VendingMachineLogic\\Product.cs": {
+      "VendingMachineLogic.Product": {
+        "System.Boolean VendingMachineLogic.Product::VendingMachineLogic.IProduct.get_IsPurchased()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Void VendingMachineLogic.Product::Purchase()": {
+          "Lines": {
+            "13": 1,
+            "14": 1,
+            "15": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\monkey\\source\\repos\\VendingMachine\\VendingMachineLogic\\ProductInfo.cs": {
+      "VendingMachineLogic.ProductInfo": {
+        "System.Int32 VendingMachineLogic.ProductInfo::get_Id()": {
+          "Lines": {
+            "9": 12
+          },
+          "Branches": []
+        },
+        "System.String VendingMachineLogic.ProductInfo::get_Name()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String VendingMachineLogic.ProductInfo::get_Info()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 VendingMachineLogic.ProductInfo::get_Price()": {
+          "Lines": {
+            "12": 13
+          },
+          "Branches": []
+        },
+        "System.Void VendingMachineLogic.ProductInfo::.ctor(System.Int32,System.String,System.String,System.Int32)": {
+          "Lines": {
+            "14": 10,
+            "15": 10,
+            "16": 10,
+            "17": 10,
+            "18": 10,
+            "19": 10,
+            "20": 10
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\monkey\\source\\repos\\VendingMachine\\VendingMachineLogic\\VMLogic.cs": {
+      "VendingMachineLogic.VMLogic": {
+        "System.Void VendingMachineLogic.VMLogic::DoVendingMachineOperatorRestockingWork()": {
+          "Lines": {
+            "24": 4,
+            "26": 48,
+            "27": 20,
+            "28": 208,
+            "29": 100,
+            "30": 24,
+            "31": 8,
+            "32": 32,
+            "33": 12,
+            "34": 4
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 34,
+              "EndOffset": 5,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 20
+            },
+            {
+              "Line": 26,
+              "Offset": 34,
+              "EndOffset": 36,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 28,
+              "Offset": 70,
+              "EndOffset": 40,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 100
+            },
+            {
+              "Line": 28,
+              "Offset": 70,
+              "EndOffset": 72,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 4
+            },
+            {
+              "Line": 30,
+              "Offset": 111,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 8
+            },
+            {
+              "Line": 30,
+              "Offset": 111,
+              "EndOffset": 113,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 4
+            },
+            {
+              "Line": 32,
+              "Offset": 152,
+              "EndOffset": 118,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 12
+            },
+            {
+              "Line": 32,
+              "Offset": 152,
+              "EndOffset": 154,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 4
+            }
+          ]
+        },
+        "System.Int32[] VendingMachineLogic.VMLogic::GetAcceptableMoneyDenominators()": {
+          "Lines": {
+            "37": 1000,
+            "38": 1000,
+            "39": 1000
+          },
+          "Branches": []
+        },
+        "System.Int32 VendingMachineLogic.VMLogic::GetCredit()": {
+          "Lines": {
+            "42": 0,
+            "43": 0,
+            "44": 0
+          },
+          "Branches": []
+        },
+        "System.Void VendingMachineLogic.VMLogic::InsertMoney(System.Int32)": {
+          "Lines": {
+            "47": 1008,
+            "48": 1008,
+            "49": 1008,
+            "50": 1,
+            "52": 1007,
+            "53": 1007
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 49,
+              "Offset": 20,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1007
+            }
+          ]
+        },
+        "VendingMachineLogic.IProduct VendingMachineLogic.VMLogic::Purchase(System.Int32)": {
+          "Lines": {
+            "56": 2,
+            "57": 2,
+            "58": 2,
+            "59": 0,
+            "62": 2,
+            "64": 2,
+            "65": 0,
+            "67": 2,
+            "68": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1
+          },
+          "Branches": [
+            {
+              "Line": 58,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 58,
+              "Offset": 7,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 58,
+              "Offset": 27,
+              "EndOffset": 29,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 58,
+              "Offset": 27,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 64,
+              "Offset": 73,
+              "EndOffset": 75,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 64,
+              "Offset": 73,
+              "EndOffset": 86,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 67,
+              "Offset": 109,
+              "EndOffset": 111,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 67,
+              "Offset": 109,
+              "EndOffset": 122,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Int32 VendingMachineLogic.VMLogic::RetrieveChange()": {
+          "Lines": {
+            "76": 2,
+            "77": 2,
+            "78": 2,
+            "79": 2,
+            "80": 2
+          },
+          "Branches": []
+        },
+        "VendingMachineLogic.ProductInfo[] VendingMachineLogic.VMLogic::VendingMachineLogic.IVMLogic.GetAvailableProducts()": {
+          "Lines": {
+            "83": 1,
+            "85": 1,
+            "86": 14,
+            "87": 6,
+            "89": 6,
+            "90": 6,
+            "91": 4,
+            "92": 4,
+            "93": 4,
+            "94": 4,
+            "95": 2,
+            "96": 6,
+            "97": 1,
+            "98": 1
+          },
+          "Branches": [
+            {
+              "Line": 86,
+              "Offset": 101,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 6
+            },
+            {
+              "Line": 90,
+              "Offset": 42,
+              "EndOffset": 44,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 90,
+              "Offset": 42,
+              "EndOffset": 61,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 86,
+              "Offset": 101,
+              "EndOffset": 103,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void VendingMachineLogic.VMLogic::.ctor()": {
+          "Lines": {
+            "10": 4,
+            "12": 4,
+            "14": 4,
+            "15": 4,
+            "16": 56,
+            "17": 24,
+            "18": 24,
+            "19": 24,
+            "21": 4,
+            "22": 4
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 79,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 24
+            },
+            {
+              "Line": 16,
+              "Offset": 79,
+              "EndOffset": 81,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\monkey\\source\\repos\\VendingMachine\\VendingMachineLogic\\Products\\Cookie.cs": {
+      "VendingMachineLogic.Products.Cookie": {
+        "VendingMachineLogic.ProductInfo VendingMachineLogic.Products.Cookie::Examine()": {
+          "Lines": {
+            "16": 5,
+            "17": 5,
+            "18": 5
+          },
+          "Branches": []
+        },
+        "System.String VendingMachineLogic.Products.Cookie::Use()": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Void VendingMachineLogic.Products.Cookie::.ctor()": {
+          "Lines": {
+            "9": 20,
+            "10": 20,
+            "11": 20,
+            "12": 20,
+            "13": 20
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\monkey\\source\\repos\\VendingMachine\\VendingMachineLogic\\Products\\Fairytale Collection.cs": {
+      "VendingMachineLogic.Products.Fairytale_Collection": {
+        "VendingMachineLogic.ProductInfo VendingMachineLogic.Products.Fairytale_Collection::Examine()": {
+          "Lines": {
+            "16": 1,
+            "17": 1,
+            "18": 1
+          },
+          "Branches": []
+        },
+        "System.String VendingMachineLogic.Products.Fairytale_Collection::Use()": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Void VendingMachineLogic.Products.Fairytale_Collection::.ctor()": {
+          "Lines": {
+            "9": 8,
+            "10": 8,
+            "11": 8,
+            "12": 8,
+            "13": 8
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\monkey\\source\\repos\\VendingMachine\\VendingMachineLogic\\Products\\Hamburger.cs": {
+      "VendingMachineLogic.Products.Hamburger": {
+        "VendingMachineLogic.ProductInfo VendingMachineLogic.Products.Hamburger::Examine()": {
+          "Lines": {
+            "16": 1,
+            "17": 1,
+            "18": 1
+          },
+          "Branches": []
+        },
+        "System.String VendingMachineLogic.Products.Hamburger::Use()": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Void VendingMachineLogic.Products.Hamburger::.ctor()": {
+          "Lines": {
+            "9": 101,
+            "10": 101,
+            "11": 101,
+            "12": 101,
+            "13": 101
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\monkey\\source\\repos\\VendingMachine\\VendingMachineLogic\\Products\\Scarf.cs": {
+      "VendingMachineLogic.Products.Scarf": {
+        "VendingMachineLogic.ProductInfo VendingMachineLogic.Products.Scarf::Examine()": {
+          "Lines": {
+            "16": 1,
+            "17": 1,
+            "18": 1
+          },
+          "Branches": []
+        },
+        "System.String VendingMachineLogic.Products.Scarf::Use()": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Void VendingMachineLogic.Products.Scarf::.ctor()": {
+          "Lines": {
+            "9": 12,
+            "10": 12,
+            "11": 12,
+            "12": 12,
+            "13": 12
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

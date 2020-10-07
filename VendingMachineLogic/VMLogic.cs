@@ -24,13 +24,13 @@ namespace VendingMachineLogic
         {
             //Load a bunch of dummy data
             for (int i = 0; i < 5; i++)
-                _slotStock[0].Enqueue(new Cookie());
+                Restock(1, new Cookie());
             for (int i = 0; i < 25; i++)
-                _slotStock[2].Enqueue(new Hamburger());
+                Restock(3, new Hamburger());
             for (int i = 0; i < 2; i++)
-                _slotStock[4].Enqueue(new Fairytale_Collection());
+                Restock(5, new Fairytale_Collection());
             for (int i = 0; i < 3; i++)
-                _slotStock[5].Enqueue(new Scarf());
+                Restock(6, new Scarf());
         }
         
         public int[] GetAcceptableMoneyDenominators()
@@ -97,5 +97,16 @@ namespace VendingMachineLogic
             return productInfos;
         }
 
+        public void Restock(int slotnumber, IProduct product)
+        {
+            int index = slotnumber - 1;
+            if(product == null)
+                throw new ArgumentException("Product cant be null");
+
+            if (index < 0 || index >= _slotStock.Length)
+                throw new ArgumentException("Bad slot number.");
+
+            _slotStock[index].Enqueue(product);
+        }
     }
 }

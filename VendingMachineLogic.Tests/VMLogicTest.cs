@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using VendingMachineLogic.Products;
 
 namespace VendingMachineLogic.Tests
 {
@@ -60,6 +61,37 @@ namespace VendingMachineLogic.Tests
 
             // Assert
             Assert.Equal(pinfo.Id, result.Examine().Id);
+        }
+
+
+        [Fact]
+        public void Restock_BadStuff_ThrowsException()
+        {
+            // Arrange
+            IVMLogic vml = new VMLogic();
+
+
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => vml.Restock(0, new Cookie()));
+            Assert.Throws<ArgumentException>(() => vml.Restock(vml.GetAvailableProducts().Length + 1, new Cookie()));
+            Assert.Throws<ArgumentException>(() => vml.Restock(1, null));
+
+        }
+        [Fact]
+        public void Restock_GoodStuff_ItsAddedInTheSystem()
+        {
+            // Arrange
+            IVMLogic vml = new VMLogic();
+            IProduct newProduct = new Cookie();
+            int bignumber = 999;
+            while (bignumber-- > 0)
+                vml.InsertMoney(vml.GetAcceptableMoneyDenominators()[0]); //Add tons of acceptable money to the system
+
+            // Act
+            vml.Restock(2, newProduct);
+
+            // Assert
+            Assert.Equal(newProduct, vml.Purchase(2));
         }
     }
 }

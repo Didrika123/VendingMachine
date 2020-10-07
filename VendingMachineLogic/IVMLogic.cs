@@ -39,5 +39,12 @@ namespace VendingMachineLogic
         /// Returns an array of integers, where each int is an accepted value to insert to the vending machine.
         /// </summary>
         public int[] GetAcceptableMoneyDenominators();
+
+        /// <summary>
+        /// Adds a product to the stock at the specified slotnumber.
+        /// </summary>
+        /// <param name="slotnumber">The slot number where you want to stock the product</param>
+        /// <param name="product">The product you want to store</param>
+        public void Restock(int slotnumber, IProduct product);
     }
 }

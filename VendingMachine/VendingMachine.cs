@@ -21,6 +21,29 @@ namespace VendingMachine
             while (!int.TryParse(Console.ReadLine(), out sel) || sel < min || sel > max) ;
             return sel;
         }
+        private void DonateEverything()
+        {
+            for (int i = _myProducts.Count - 1; i >= 0 ; i--)
+            {
+                IProduct product = _myProducts[i];
+                _myProducts.RemoveAt(i);
+                int index = -1;
+                ProductInfo[] products = _vendingMachineLogic.GetAvailableProducts();
+                for (int k = 0; k < products.Length; k++)
+                {
+                    if(product.Examine().Id == products[k].Id)
+                    {
+                        index = k;
+                    }
+                    else if (index == -1 && products[k].Price == 0)
+                    {
+                        index = k;
+                    }
+                }
+
+                _vendingMachineLogic.Restock(index + 1, product);
+            }
+        }
 
         private void MainMenu()
         {
@@ -141,7 +164,7 @@ namespace VendingMachine
             List<IProduct> products = _myProducts;
             int selection;
             int minSelection = 1;
-            int maxSelection = products.Count + 1;
+            int maxSelection = products.Count + 2;
             do
             {
                 Header();
@@ -149,10 +172,15 @@ namespace VendingMachine
                 {
                     Console.WriteLine($"{i + 1}. {products[i].Examine().Name}");
                 }
+                Console.WriteLine($"{maxSelection - 1}. Donate Everything to charity (For the benefit of vending machines across the world)");
                 Console.WriteLine($"{maxSelection}. Exit");
 
                 selection = AskUserForSelection(minSelection, maxSelection);
-                if (selection != maxSelection)
+                if(selection == maxSelection - 1)
+                {
+                    DonateEverything();
+                }
+                else if (selection != maxSelection)
                 {
                     Console.WriteLine("\nYou use " + products[selection - 1].Examine().Name +":\n");
                     Console.WriteLine(products[selection - 1].Use());
