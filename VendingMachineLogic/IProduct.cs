@@ -12,7 +12,7 @@ namespace VendingMachineLogic
      * */
     public interface IProduct
     {
-        public bool IsPurchased { get; protected set; }
+        bool IsPurchased { get;}
 
         /// <summary>
         /// Buys the product

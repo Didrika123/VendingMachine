@@ -6,12 +6,11 @@ namespace VendingMachineLogic
 {
     public abstract class Product : IProduct 
     {
-        bool _isPurchased;
-        bool IProduct.IsPurchased { get => _isPurchased; set => _isPurchased = value; }
+        public bool IsPurchased { get; private set; }
 
         public void Purchase()
         {
-            _isPurchased = true;
+            IsPurchased = true;
         }
 
         public abstract ProductInfo Examine();
