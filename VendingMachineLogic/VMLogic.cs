@@ -79,7 +79,7 @@ namespace VendingMachineLogic
             return temp;
         }
 
-        ProductInfo[] IVMLogic.GetAvailableProducts()
+        public ProductInfo[] GetAvailableProducts()
         {
             //Extract all unique infos from list of stock
             ProductInfo[] productInfos = new ProductInfo[_slotStock.Length];
